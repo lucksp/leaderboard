@@ -1,3 +1,37 @@
 * {
   min-width: 0;
 }
+
+#hero {
+  height: 50vh;
+  background: url("../../public/assets/img/hero.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .hero-title {
+    background: lightgray;
+    padding: 40px;
+    border-radius: 4px;
+  }
+}
+
+#board {
+  margin: 48px auto;
+  #board-new {
+    text-align: center;
+    padding: 16px 0;
+  }
+  .dropdown-countries {
+    .dropdown-menu {
+      max-height: 200px;
+      overflow-y: auto;
+      .dropdown-item {
+        cursor: pointer;
+      }
+    }
+  }
+}

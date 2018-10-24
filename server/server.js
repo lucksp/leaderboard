@@ -4,6 +4,8 @@ const express = require("express");
 const app = express();
 const port = process.env.NODE_ENV === "production" ? 80 : 3000;
 
+const countries = require("./countries.json");
+
 let useFolder;
 console.log("NODE_ENV: ", process.env.NODE_ENV);
 
@@ -35,8 +37,8 @@ app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, ".." + useFolder + "index.html"));
 });
 
-app.get("/api/data", (req, res) => {
-  res.send("hi from server"); // replace me with real data
+app.get("/api/countries", (req, res) => {
+  res.json(countries); // replace me with real data
 });
 
 app.listen(port, function(err) {
