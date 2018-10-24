@@ -9,6 +9,7 @@ import store from "./redux/createStore";
 import { Provider } from "react-redux";
 
 //styles
+import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/style.scss";
 
 const render = Component =>
