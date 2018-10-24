@@ -4,7 +4,7 @@ import React from "react";
 const Hero = () => {
   return (
     <div id="hero">
-      <div>All-Time Tournament Earnings</div>
+      <h1 className="hero-title">All-Time Poker Tournament Earnings</h1>
     </div>
   );
 };

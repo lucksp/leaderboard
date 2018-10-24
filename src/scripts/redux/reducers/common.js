@@ -5,6 +5,12 @@ const initialState = [];
 
 export default function data(state = state ? state : initialState, action) {
   switch (action.type) {
+    case ActionTypes.GET_COUNTRIES:
+      return {
+        ...state,
+        loading: false,
+        countries: action.payload
+      };
   }
   return state;
 }

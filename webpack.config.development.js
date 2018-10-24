@@ -1,6 +1,5 @@
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -28,27 +27,24 @@ module.exports = {
         test: /\.(scss|css)$/,
         use: [
           {
-            loader: "style-loader" // creates style nodes from JS strings
+            loader: "style-loader"
           },
           {
-            loader: "css-loader" // translates CSS into CommonJS
+            loader: "css-loader"
           },
           {
-            loader: "sass-loader" // compiles Sass to CSS
-          },
-          {
-            loader: "postcss-loader",
-            options: {
-              config: {
-                ctx: {
-                  autoprefixer: {
-                    browsers: "last 2 versions"
-                  }
-                }
-              }
-            }
+            loader: "sass-loader"
           }
         ]
+      },
+      {
+        test: /\.(jpg|png|svg)$/,
+        use: {
+          loader: "url-loader",
+          options: {
+            name: "[path][name].[ext]"
+          }
+        }
       }
     ]
   },
