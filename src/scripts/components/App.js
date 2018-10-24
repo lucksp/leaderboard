@@ -1,27 +1,15 @@
 // React components
 import React from "react";
-import Home from "./Home";
+import Board from "./Board";
+import Hero from "./Hero";
 
-// Redux/State
-import { connect } from "react-redux";
-
-const App = props => {
+const App = () => {
   return (
-    <div>
-      <Home />
-    </div>
+    <main>
+      <Hero />
+      <Board />
+    </main>
   );
 };
 
-function mapStateToProps(state) {
-  return {};
-}
-
-function mapDispatchToProps(dispatch) {
-  return;
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App);
+export default App;
