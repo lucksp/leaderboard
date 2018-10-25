@@ -4,15 +4,15 @@ import ActionTypes from "../actions/actionTypes";
 const initialState = {
   loading: false,
   countries: {},
-  playerData: [
-    // {
-    //   name: "Phil",
-    //   country: "Andorra",
-    //   emoji: "🇦🇩",
-    //   winnings: "1234",
-    //   id: "_nl067xh98"
-    // }
-  ]
+  playerData: {
+    _nl067xh98: {
+      name: "Phil",
+      country: "Andorra",
+      emoji: "🇦🇩",
+      winnings: "1234",
+      id: "_nl067xh98"
+    }
+  }
 };
 
 export default function data(state = state ? state : initialState, action) {
@@ -26,7 +26,31 @@ export default function data(state = state ? state : initialState, action) {
     case ActionTypes.PLAYER_ADD:
       return {
         ...state,
-        playerData: [...state.playerData, action.payload]
+        playerData: {
+          ...state.playerData,
+          ...action.payload
+        }
+      };
+    case ActionTypes.PLAYER_UPDATE_WINNINGS:
+      let tempState = { ...state.playerData };
+      const newValue =
+        parseInt(tempState[action.payload.id].winnings) +
+        parseInt(action.payload.value);
+
+      tempState = {
+        ...tempState,
+        [action.payload.id]: {
+          ...tempState[action.payload.id],
+          winnings: newValue
+        }
+      };
+
+      return {
+        ...state,
+        playerData: {
+          ...state.playerData,
+          ...tempState
+        }
       };
   }
   return state;

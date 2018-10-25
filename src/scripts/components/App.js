@@ -1,6 +1,6 @@
 // React components
 import React from "react";
-import Board from "./Board";
+import Board from "./features/Board";
 import Hero from "./Hero";
 
 const App = () => {

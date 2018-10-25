@@ -11,7 +11,7 @@ import Dropper from "./Dropper";
 
 // redux/state imports
 import { connect } from "react-redux";
-import { fetchCountries, addPlayer } from "../redux/actions/common";
+import { fetchCountries, addPlayer } from "../../redux/actions/common";
 
 class PlayerInput extends Component {
   form = React.createRef();

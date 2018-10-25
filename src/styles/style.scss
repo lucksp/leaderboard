@@ -47,8 +47,28 @@
     }
   }
   table {
-    .table-data-emoji {
-      margin-right: 4px;
+    tbody {
+      .table-data-emoji {
+        margin-right: 4px;
+      }
+      .player-winnings {
+        display: flex;
+        .name-edit-icon {
+          margin-left: 4px;
+          width: 24px;
+          height: 24px;
+          display: flex;
+          cursor: pointer;
+          img {
+            width: inherit;
+          }
+        }
+        .edit-winning {
+          input {
+            height: 24px;
+          }
+        }
+      }
     }
   }
 }

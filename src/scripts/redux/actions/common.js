@@ -28,7 +28,8 @@ export function fetchCountries(url) {
 
 export function addPlayer(data, cb) {
   return function(dispatch, state) {
-    data.id = ID();
+    const id = ID();
+    data.id = id;
 
     const countryData = state().common.countries.find(
       country => data.country === country.name
@@ -36,11 +37,20 @@ export function addPlayer(data, cb) {
     data.emoji = countryData.emoji;
     dispatch({
       type: ActionTypes.PLAYER_ADD,
-      payload: data
+      payload: { [id]: data }
     });
     if (typeof cb === "function") {
       cb();
     }
     return;
+  };
+}
+
+export function updateWinnings(value, id) {
+  return function(dispatch, state) {
+    return dispatch({
+      type: ActionTypes.PLAYER_UPDATE_WINNINGS,
+      payload: { value, id }
+    });
   };
 }
