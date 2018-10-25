@@ -24,7 +24,11 @@ class Dropper extends Component {
         toggle={this.toggle}
         className={this.props.className}
       >
-        <DropdownToggle caret>
+        <DropdownToggle
+          caret
+          color={this.props.selected ? "success" : "secondary"}
+          className="dropdown-selector"
+        >
           {this.props.defaultText ? this.props.defaultText : "Select"}
         </DropdownToggle>
         <DropdownMenu>
