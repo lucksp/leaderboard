@@ -42,6 +42,22 @@ module.exports = {
           // use style-loader in development
           fallback: "style-loader"
         })
+      },
+      {
+        test: /\.(svg)$/,
+        loader: "file-loader",
+        options: {
+          name: "[path][name].[ext]"
+        }
+      },
+      {
+        test: /\.(jpg|png)$/,
+        use: {
+          loader: "url-loader",
+          options: {
+            name: "[path][name].[ext]"
+          }
+        }
       }
     ]
   },
