@@ -54,7 +54,15 @@
       .player-winnings {
         display: flex;
         flex-wrap: wrap;
-        .name-edit-icon {
+        .edit-winning {
+          &[contenteditable="false"] {
+            cursor: pointer;
+          }
+        }
+        .edit-toolbar {
+          display: flex;
+        }
+        .winnings-edit-icon {
           margin-left: 4px;
           width: 24px;
           height: 24px;
@@ -65,6 +73,8 @@
           }
         }
         .edit-winning {
+          pointer-events: none;
+          cursor: default;
           max-width: 200px;
           input {
             height: 24px;
