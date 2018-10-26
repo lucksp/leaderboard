@@ -4,15 +4,7 @@ import ActionTypes from "../actions/actionTypes";
 const initialState = {
   loading: false,
   countries: {},
-  playerData: {
-    _nl067xh98: {
-      name: "Phil",
-      country: "Andorra",
-      emoji: "🇦🇩",
-      winnings: "1234",
-      id: "_nl067xh98"
-    }
-  }
+  playerData: {}
 };
 
 export default function data(state = state ? state : initialState, action) {
