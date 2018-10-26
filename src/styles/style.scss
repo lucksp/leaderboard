@@ -53,6 +53,7 @@
       }
       .player-winnings {
         display: flex;
+        flex-wrap: wrap;
         .name-edit-icon {
           margin-left: 4px;
           width: 24px;
@@ -64,6 +65,7 @@
           }
         }
         .edit-winning {
+          max-width: 200px;
           input {
             height: 24px;
           }
