@@ -34,7 +34,7 @@ class EditableField extends Component {
 
     let tempValue = this.editField.current.innerHTML;
     //check for only numbers
-    if (!tempValue.match(/^[0-9]*$/)) {
+    if (tempValue !== "-" && !tempValue.match(/^[\-\+]?\d+$/)) {
       // TODO - return better error message
       return this.toggleEditing();
     }
