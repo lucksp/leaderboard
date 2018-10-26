@@ -12,12 +12,6 @@ Built in React and Redux; with Webpack, Express, Hot Module Replacement loading 
 
 `yarn dev`
 
-`yarn install`
-
-## Run Dev
-
-`yarn dev`
-
 ## Run Prod
 
 `yarn build`
