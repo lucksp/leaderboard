@@ -37,8 +37,7 @@ class EditableField extends Component {
           onChange={this.handleChange}
           innerRef={input => (this.editField = input)}
           type="number"
-          placeholder="Enter new value to be added or subtracted to the original amount to
-                report new winnings."
+          placeholder="Enter new value"
         />
       </InputGroup>
     );
